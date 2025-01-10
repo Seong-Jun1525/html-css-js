@@ -1,0 +1,15 @@
+/* 똑같지만 나중을 생각해서 나누기~ */
+#login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.login-form-container {
+    width: 25%;
+    background-color: #ccc;
+    padding: 1rem;
+    border-radius: 1.3rem;
+    box-shadow: 0 0 1rem 0.3rem lightgrey;
+}

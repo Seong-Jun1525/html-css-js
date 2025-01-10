@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            margin: 0;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+        }
+        .product-image-area {
+            position: relative;
+            width: 100%;
+            height: 45%;
+            background-image: url("./image/apple.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .product-image-description {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding-bottom: 1rem;
+        }
+        .product-image-description h2 {
+            margin-left: 1.5em;
+            color: white;
+        }
+        .product-image-description p {
+            margin-left: 1em;
+            color: gold;
+            line-height: 1.7rem;
+        }
+
+        .content {
+            margin-top: 1em;
+            border: 1px solid black;
+        }
+
+        .content .check {
+            background-color: #000;
+            color: white;
+            font-size: 1rem;
+            font-weight: normal;
+            text-align: left;
+            padding: 0.3em;
+        }
+
+        .content h2 {
+            font-size: 1.5em;
+            color: #FF0000;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .accent {
+            color: #0000FF;
+        }
+
+        .smalltext {
+            font-size: 0.7em;
+        }
+
+        footer {
+            border-top: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="product-image-area">
+                <div class="product-image-description">
+                    <h2>가정용 꿀사과</h2>
+                    <p>
+                        흠집이 있고 약간은 못생겼지만 맛과 영양은 그대로입니다.<br>
+                        질좋은 사과를 저렴하게 즐겨보세요
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <p class="check">확인하세요</p>
+                <div class="content-item">
+                    <h2>주문 및 배송</h2>
+                    <p>
+                        <span class="accent">오후 2시 이전</span> 주문건은 당일 배송합니다.<br>
+                        2시 이후 주문건은 다음날 발송합니다.(주말제외)
+                    </p>
+                </div>
+                <div class="content-item">
+                    <h2>교환 및 환불</h2>
+                    <p>
+                        불만족시 <span class="accent">100% 환불</span>해 드립니다.<br>
+                        고객센터로 전화해주세요.
+                    </p>
+                </div>
+                <footer>
+                    <h2>고객센터</h2>
+                    <p>
+                        0000-0000<br>
+                        <span class="smalltext">상담시간 : 오전 9시 ~ 오후 6시 (토/일, 공휴일 휴무)</span>
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

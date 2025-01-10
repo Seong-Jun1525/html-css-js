@@ -115,3 +115,9 @@ function accessSelector() {
 
     document.querySelector("#tmp2 + h3").innerText = "출연자 : 김원훈";
 }
+
+let age = 4;
+
+if(age < 8) console.log("어린이");
+else if(age <= 19) console.log("청소년");
+else if(age >= 20) console.log("성인");

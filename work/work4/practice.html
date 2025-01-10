@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .categoryBox {
+            border: 1px solid salmon;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset style="margin-bottom: 1rem;">
+            <legend>취미</legend>
+            <input type="checkbox" name="hobby" id="all" value="all" onchange="checkAll();">
+            <label for="all">전체선택</label>
+            
+            <input type="checkbox" name="hobby" id="synthesis" value="synthesis" onchange="checkBoxTrigger();">
+            <label for="synthesis">종합</label>
+            
+            <input type="checkbox" name="hobby" id="book" value="book" onchange="checkBoxTrigger();">
+            <label for="book">소설</label>
+            
+            <input type="checkbox" name="hobby" id="poetry/essay" value="poetry/essay" onchange="checkBoxTrigger();">
+            <label for="poetry/essay">시/에세이</label>
+            
+            <input type="checkbox" name="hobby" id="E/M" value="E/M" onchange="checkBoxTrigger();">
+            <label for="E/M">경제/경영</label>
+            
+            <input type="checkbox" name="hobby" id="SD" value="SD" onchange="checkBoxTrigger();">
+            <label for="SD">자기계발</label>
+            
+            <input type="checkbox" name="hobby" id="child" value="child" onchange="checkBoxTrigger();">
+            <label for="child">아동</label>
+            
+            <input type="checkbox" name="hobby" id="trip" value="trip" onchange="checkBoxTrigger();">
+            <label for="trip">여행</label>
+            
+            <input type="checkbox" name="hobby" id="science" value="science" onchange="checkBoxTrigger();">
+            <label for="science">과학</label>
+            
+            <input type="checkbox" name="hobby" id="history" value="history" onchange="checkBoxTrigger();">
+            <label for="history">역사/문화</label>
+            
+            <input type="checkbox" name="hobby" id="langauge" value="langauge" onchange="checkBoxTrigger();">
+            <label for="langauge">외국어</label>
+            
+            <input type="checkbox" name="hobby" id="computer" value="computer" onchange="checkBoxTrigger();">
+            <label for="computer">컴퓨터</label>
+            
+            <input type="checkbox" name="hobby" id="comic" value="comic" onchange="checkBoxTrigger();">
+            <label for="comic">만화</label>
+        </fieldset>
+
+        <button type="button" class="categoryBtn" onclick="selectCategoryBtn();">카테고리 선택</button>
+
+        <div id="categoryBox">
+
+        </div>
+    </form>
+
+    <script>
+        function checkAll() {
+            const checkBoxAll = document.getElementById("all");
+            const hobbyList = document.getElementsByName("hobby");
+
+            if(checkBoxAll.checked) {
+                for(let l of hobbyList) {
+                    l.checked = true;
+                }
+            }
+            else {
+                for(let l of hobbyList) {
+                    l.checked = false;
+                }
+            }
+        }
+
+        function checkBoxTrigger() {
+            let check = true;
+        }
+
+        function selectCategoryBtn() {
+            // 취미 요소
+            const hobbyList = document.getElementsByName("hobby");
+            console.log(hobbyList);
+
+            // 카테고리 선택 버튼 요소
+            const categoryBtn = document.querySelector(".categoryBtn");
+            // console.log(categoryBtn);
+
+            // 카테고리 출력 박스
+            const categoryBox = document.querySelector("#categoryBox");
+            // console.log(categoryBox);
+
+        }
+    </script>
+</body>
+</html>

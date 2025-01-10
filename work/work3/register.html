@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="register-form-container">
+                <div class="form-title">
+                    <h2>회원가입</h2>
+                </div>
+                <!--
+                    서버가 연결이 안되어 있어도
+                    action에 해당 경로를 입력해주면 해당 페이지를 열어준다
+                -->
+                <form action="login.html" method="post" id="register-form">
+                    <div class="form-content">
+                        <div class="form-item">
+                            <label class="form-label" for="user-name">이름</label>
+                            <input type="text" name="user-name" required class="input-item" id="user-name" />
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="user-email">이메일</label>
+                            <input type="email" name="user-email" required class="input-item" id="user-email" />
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="user-pw">비밀번호</label>
+                            <input type="password" name="user-pw" required class="input-item" id="user-pw" />
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="user-pw-check">비밀번호 확인</label>
+                            <input type="password" name="user-pw-check" required class="input-item" id="user-pw-check" />
+                        </div>
+                    </div>
+                    <div class="form-btn">
+                        <button type="submit" class="btn">가입하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
