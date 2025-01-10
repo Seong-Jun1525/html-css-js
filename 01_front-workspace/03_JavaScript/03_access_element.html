@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소에 접근하기</title>
+
+    <style>
+        .area {
+            width: 300px;
+            height: 300px;
+            border: 1px solid salmon;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML 요소에 접근하기</h1>
+    <h2>(해당 요소의 객체를 가져오는 것)</h2>
+
+    <h3>1) id 속성을 사용하여 요소 가져오기</h3>
+    <p>
+        document.getElementById("아이디명"); → 해당 요소 객체 반환
+    </p>
+
+    <button onclick="accessId();">아이디로 접근</button>
+    <div id="area1" class="area">1번 영역</div>
+
+    <script>
+        function accessId() {
+            // "area1"이라는 아이디 속성을 가진 요소 접근
+            let areaEl = document.getElementById("area1");
+            // {let 변수명 = }은 변수에 접근한 요소 객체를 저장
+
+            // 선택된 요소의 속성값을 조회하거나 변경하고자 할 때
+            // 선택된 요소.속성명
+
+            // 선택된 요소의 내용 변경
+            // input 태그 -> value 속성
+            // 그 외 태그 -> innerHTML 또는 innerText
+
+            areaEl.innerHTML = `
+                ${areaEl.innerHTML}<br>아이디로 접근 성공
+            `;
+
+            // areaEl.innerHTML += "<br>아이디로 접근 성공";
+
+            // 랜덤 출력
+            areaEl.style.color = `rgb(
+                ${Math.floor(Math.random() * 255)}, 
+                ${Math.floor(Math.random() * 255)}, 
+                ${Math.floor(Math.random() * 255)})
+            `;
+
+            areaEl.style.backgroundColor = `rgb(
+                ${Math.floor(Math.random() * 255)}, 
+                ${Math.floor(Math.random() * 255)}, 
+                ${Math.floor(Math.random() * 255)})
+            `;
+            areaEl.style.width = `${Math.floor(Math.random() * 500)}px`;
+            areaEl.style.height = `${Math.floor(Math.random() * 700)}px`;
+
+            // areaEl.style.backgroundColor = areaEl.style.backgroundColor === "skyblue" ? "yellow" : "skyblue";
+        
+            // areaEl.style.width = "100px";
+            // areaEl.style.height = "200px";
+        }
+    </script>
+
+    <h3>2) 태그명으로 요소 가져오기</h3>
+    <p>
+        document.getElementsByTagName("태그명");<br>
+        → 선택된 요소 객체들이 배열로 반환
+    </p>
+
+    <button onclick="accessTagName();">태그명으로 접근</button>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+
+
+    <script>
+        function accessTagName() {
+            let listItem = document.getElementsByTagName("li");
+            
+            // console.log(listItem);
+            // console.log(listItem.length);
+
+            // console.log(listItem[0].innerHTML);
+            console.log(listItem[0].innerText);
+            console.log(listItem[3].innerHTML);
+        }
+    </script>
+</body>
+</html>

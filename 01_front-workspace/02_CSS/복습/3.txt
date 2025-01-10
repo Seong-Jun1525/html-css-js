@@ -1,0 +1,21 @@
+[ 조건에 맞게 스타일 적용 ]
+- 특정 요소의 테두리를 없애고자 할 경우 적용할 스타일
+=> border: none;
+
+- 특정 요소의 테두리를 둥글게 표현하고자 할 경우 적용할 스타일
+=> border-radius
+
+- 배경 이미지를 특정 위치에 고정하고자 할 경우 적용할 스타일
+=> background-attachment ★★★(외우기)
+
+- 블럭 요소는 [한 줄] 영역을 차지하고, 인라인 요소는 [내용] 영역만 차지함
+
+- 요소의 영역 = [content] 영역 + [padding] 영역 + [border] 영역
+  [margin]은 요소의 바깥쪽 영역
+  
+- span 요소의 가로길이를 150px, 세로길이를 150px로 적용
+span {
+    display: block;
+    width: 150px;
+    height: 150px;
+}

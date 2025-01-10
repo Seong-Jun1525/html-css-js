@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 우선순위</title>
+
+    <style>
+        h1 {
+            background-color: aquamarine;
+        }
+
+        h1 {
+            /* 가장 마지막에 적용한 속성값이 적용됨 */
+            background-color: blueviolet;
+        }
+
+        #id1 {
+            background-color: darkslateblue;
+        }
+
+        .class1 {
+            background-color: lightblue;
+            color: blue;
+        }
+
+        div {
+            background-color: crimson !important;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자 우선순위</h1>
+    <ul>
+        <li>기본적으로 위에서부터 아래로 적용됨</li>
+        <li>동일한 요소를 다양한 선택자로 CSS를 적용한 경우 우선순위에 따라 적용됨</li>
+        <li>(가장 강력한 우선순위)!important → 인라인스타일방식 → 아이디 선택자 → 클래스 선택자 → 태그 선택자</li>
+    </ul>
+
+    <div id="id1" class="class1" style="background-color: bisque; color: blueviolet">
+        선택자 우선순위 테스트
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>

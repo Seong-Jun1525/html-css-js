@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* ul {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        } */
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend><b>사용자 정보</b></legend>
+            <ul>
+                <li>
+                    <label for="user-id">사용자 아이디</label>
+                    <input type="text" id="user-id" name="user-id" />
+                </li>
+                <li>
+                    <label for="user-email">사용자 이메일</label>
+                    <input type="email" id="user-email" name="user-email" />
+                </li>
+                <li>
+                    <label for="user-pw">사용자 비밀번호</label>
+                    <input type="password" id="user-pw" name="user-pw" />
+                </li>
+                <li>
+                    <label for="user-pw-check">사용자 비밀번호 확인</label>
+                    <input type="password" id="user-pw-check" name="user-pw-check" />
+                </li>
+                <li>
+                    <label for="join-path">가입경로</label>
+                    <select id="join-path" name="join-path">
+                        <option value="naver">네이버</option>
+                        <option value="google">구글</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="user-memo">메모</label>
+                    <textarea cols="40" rows="4" placeholder="남기실 메모를 작성해주세요"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend><b>이벤트와 새로운 소식</b></legend>
+            <ul style="width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
+                <li>
+                    <input type="radio" id="event-true" name="event" />
+                    <label for="event-true">메일 수신</label>
+                </li>
+                <li>
+                    <input type="radio" id="event-false" name="event" />
+                    <label for="event-false">메일 수신</label>
+                </li>
+            </ul>
+        </fieldset>
+        <div id="buttons">
+            <button type="submit">
+                제출
+            </button>
+            <button type="reset">
+                취소
+            </button>
+        </div>
+    </form>
+
+    <hr>
+    <h2>textarea 태그</h2>
+    <ul>
+        <li>여러 줄의 텍스트를 입력할 수 있는 텍스트 상자</li>
+    </ul>
+    <form action="test">
+        <fieldset>
+            <legend>글 작성</legend>
+            <ul style="list-style: none;">
+                <li>
+                    <label for="title">제목</label>
+                    <input type="text" name="title" id="title" />
+                </li>
+                <li style="display: flex; align-items: first baseline; margin-top: 1rem;">
+                    <label for="content">내용</label>
+                    <textarea name="content" cols="50" rows="10" id="content" placeholder="내용을 입력하세요" style="margin-left: 0.3rem;"></textarea>
+                </li>
+            </ul>
+            <div>
+                <input type="submit" value="작성하기" />
+            </div>
+        </fieldset>
+    </form>
+    <hr>
+    <h2>숫자와 관련된 input 태그의 타입</h2>
+    <form action="test">
+        <h3>type="number"</h3>
+        <ul>
+            <li>숫자에 대한 값만 작성 가능한 텍스트 상자</li>
+            <li>스핀 박스가 표시됨(* 스핀박스 : 위/아래 화살표 버튼)</li>
+        </ul>
+
+        <ul style="list-style: none;">
+            <li>
+                <label for="amount">수량</label>
+                <input 
+                    type="number" 
+                    name="amount" 
+                    id="amount" 
+                    min="0" 
+                    max="50" 
+                    step="5" 
+                />
+            </li>
+        </ul>
+
+        <h3>type="range"</h3>
+        <ul>
+            <li>슬라이드 바를 통해 숫자 지정 가능</li>
+        </ul>
+
+        <ul style="list-style: none;">
+            <li>
+                <label for="score">수량</label>
+                <input 
+                    type="range" 
+                    name="score"
+                    id="score" 
+                    min="0" 
+                    max="100" 
+                    step="20" 
+                />
+            </li>
+        </ul>
+
+        <div>
+            <input type="submit" value="확인" />
+        </div>
+    </form>
+
+    <hr>
+    <h2>날짜 및 시간 관련된 input 태그의 타입</h2>
+    <form action="test">
+        <ul>
+            <li>날짜 : date</li>
+            <li>월 : month</li>
+            <li>주 : week</li>
+            <li>시간 : time</li>
+            <li>날짜 + 시간 : datetime-local</li>
+        </ul>
+
+        <ul>
+            <li>
+                <label for="date">date</label>
+                <input type="date" id="date" name="date" />
+                <!-- 년도, 월, 일 입력받을 수 있는 텍스트 상자-->
+            </li>
+            <li>
+                <label for="month">month</label>
+                <input type="month" id="month" name="month" />
+                <!-- 년도, 월 입력받을 수 있는 텍스트 상자-->
+            </li>
+            <li>
+                <label for="week">week</label>
+                <input type="week" id="week" name="week" />
+                <!-- 년도, 주 입력받을 수 있는 텍스트 상자-->
+            </li>
+            <li>
+                <label for="time">time</label>
+                <input type="time" id="time" name="time" />
+                <!-- 오전, 오후 시, 분 정보를 입력받을 수 있는 텍스트 상자-->
+            </li>
+        </ul>
+
+        <div>
+            <input type="submit" value="확인" />
+        </div>
+    </form>
+    <hr>
+    <h2>라디오 버튼과 체크박스 input 태그의 타입</h2>
+    <form action="test">
+        <h3>라디오 버튼</h3>
+        <ul>
+            <li>type="radio"</li>
+            <li>여러 값들 중 하나의 값만 선택하고자 할 때</li>
+            <li>name을 동일하게 줘야지 하나의 값만 선택할 수 있다</li>
+            <li>전달하고자 하는 값은 <mark><strong>value</strong></mark>로 설정해줘야함</li>
+        </ul>
+        <ul>
+            <li>
+                <input type="radio" name="gender" id="genderX" value="x" checked />
+                <label for="genderX">선택안함</label>
+            </li>
+            <li>
+                <input type="radio" name="gender" id="genderM" value="man" />
+                <label for="genderM">남</label>
+            </li>
+            <li>
+                <input type="radio" name="gender" id="genderW" value="woman" />
+                <label for="genderW">여</label>
+            </li>
+        </ul>
+        <h3>체크박스</h3>
+        <ul>
+            <li>type="checkbox"</li>
+            <li>여러 값들 중 여러 값들을 선택할 수 있도록 하고자 할 때</li>
+            <li>선택된 체크박스의 value 속성 값이 전달됨 <mark><strong>반드시 value 속성 값을 지정해줘야함</strong></mark></li>
+        </ul>
+        <ul>
+            <li>
+                <input type="checkbox" id="health" name="hobby" value="health" />
+                <label for="health">헬스</label>
+            </li>
+            <li>
+                <input type="checkbox" id="music" name="hobby" value="music" />
+                <label for="music">음악감상</label>
+            </li>
+            <li>
+                <input type="checkbox" id="cook" name="hobby" value="cook" />
+                <label for="cook">요리</label>
+            </li>
+        </ul>
+        <div>
+            <input type="submit" value="전송" />
+        </div>
+    </form>
+    <hr>
+    <h2>그 외 input 태그의 타입</h2>
+    <form action="test">
+        <h3>type="color"</h3>
+        <ul>
+            <li>색상을 선택할 수 있는 타입</li>
+        </ul>
+
+        <ul>
+            <li><input type="color" name="myColor" /></li>
+        </ul>
+
+        <h3>type="file"</h3>
+        <ul>
+            <li>파일을 첨부</li>
+        </ul>
+
+        <ul>
+            <li>
+                <input type="file" name="myFile" />
+            </li>
+        </ul>
+
+        <h3>type="hidden"</h3>
+        <ul>
+            <li>
+                사용자에게 입력받지 않고 화면에 출력하지도 않으면서 
+                서버에 넘길 데이터 값이 있는 경우 사용
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <input type="hidden" name="secret" value="숨길내용" />
+            </li>
+        </ul>
+
+        <h3>버튼 관련 타입</h3>
+        <ul>
+            <li>submit : 제출</li>
+            <li>reset : 사용자 입력 데이터 초기화</li>
+            <li>button : 일반적인 버튼</li>
+        </ul>
+
+        <h3>select 와 option 태그 사용</h3>
+        <ul>
+            <li>
+                사용자가 직접 입력하는 것이 아니라
+                제시한 여러 개의 값들 중 선택하도록 하고자 할 경우
+            </li>
+            <li>
+                제출 시 선택된 option 태그의 값이 전달됨
+                <ul>
+                    <li>각 option 태그의 value 속성이 지정되지 않은 경우 내용부분의 값이 전달됨</li>
+                    <li>value 속성이 지정되어 있는 경우 해당 value 속성 값이 전달됨</li>
+                </ul>
+            </li>
+        </ul>
+        <label for="lang">언어</label>
+        <select id="lang" name="lang">
+            <option value="KO">한국어</option>
+            <option value="ENG">영어</option>
+            <option value="JP">일본어</option>
+        </select>
+
+        <input type="submit" value="전송" />
+        <input type="reset" value="취소" />
+        <input type="button" value="일반" />
+        <br />
+        <br />
+        <button>전송</button>
+        <button type="reset">취소</button>
+        <button type="button">일반</button>
+    </form>
+    
+    <hr>
+    <h2>datalist 태그</h2>
+    <ul>
+        <li>
+            사용자에게 직접 값을 입력받거나
+            select 태그처럼 목록을 통해 선택받을 수 있는 태그
+        </li>
+    </ul>
+    <form action="test">
+        <input type="text" name="snack" list="snack-list" />
+        <datalist id="snack-list">
+            <option value="s1">포카칩</option>
+            <option value="s2">새우깡</option>
+            <option value="s3">초코칩</option>
+            <option value="s4">꼬북칩</option>
+        </datalist>
+
+        <input type="submit" value="전달" />
+    </form>
+</body>
+</html>

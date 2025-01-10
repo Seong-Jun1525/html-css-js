@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: red; */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    background-color: yellow;
+}
+
+.header-container {
+    width: 100%;
+    height: 10%;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+
+/* 검색 바 */
+.search-bar {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-form {
+    width: 70%;
+    height: 100%;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-search {
+    width: 70%;
+    font-size: 1.1rem;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    padding: 0.5rem;
+    border: none;
+}
+
+.search-btn {
+    font-size: 1.1rem;
+    padding: 0.4rem;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* 사용자 메뉴 */
+.user-area {
+    width: 20%;
+    height: 100%;
+    background-color: green;
+}
+
+.content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-menu {
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    overflow-y: auto;
+}
+
+.content {
+    width: 80%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: red;
+}
+
+.video-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: pink;
+}
+
+.category {
+    width: 100%;
+    height: 10%;
+    background-color: skyblue;
+}

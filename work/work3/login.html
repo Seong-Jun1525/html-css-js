@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="login-form-container">
+                <div class="form-title">
+                    <h2>로그인</h2>
+                </div>
+                <form action="test" method="post" id="login-form">
+                    <div class="form-content">
+                        <div class="form-item">
+                            <label class="form-label" for="user-email">이메일</label>
+                            <input type="email" name="user-email" required class="input-item" id="user-email" />
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="user-pw">비밀번호</label>
+                            <input type="password" name="user-pw" required class="input-item" id="user-pw" />
+                        </div>
+                    </div>
+                    <div class="form-btn">
+                        <button type="submit" class="btn">로그인</button>
+                    </div>
+                </form>
+                <hr>
+                <div class="link-group">
+                    <a href="./register.html">회원가입</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

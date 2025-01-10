@@ -1,0 +1,19 @@
+CSS
+- 내부 스타일
+    - <head> 안에 <style> 태그 안에 CSS 설정
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+
+- 외부 스타일 ★★★
+    - CSS 파일을 만들어서 CSS 설정
+    - text.css
+    p {
+        text-align: center;
+    }
+
+- 인라인 스타일
+    - 태그 안에 style 속성을 사용해서 CSS 설정
+    - <p style="text-align: center"></p>

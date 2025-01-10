@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 문서 구조</title>
+
+    <style>
+        /* body {
+            padding: 0;
+            margin: 0;
+        } */
+        div {
+            border: 1px solid grey;
+            box-sizing: border-box;
+        }
+
+        /* 전체를 감싸는 영역 */
+        .wrap {
+            width: 1000px;
+            height: 800px;
+            min-width: 800px;
+            min-height: 500px;
+            margin: auto;
+        }
+
+        .wrap > div {
+            width: 100%;
+        }
+
+        #header, #footer {
+            height: 20%;
+        }
+
+        #content {
+            height: 60%;
+            display: flex;
+        }
+
+        /* #content 영역 내의 요소 배치 */
+        #content > div {
+            height: 100%;
+        }
+
+        #content1, #content3 {
+            width: 200px;
+        }
+        #content2 {
+            width: calc(100% - 400px); /* 전체 100%에서 고정값 400px를 제외한 크기를 계산에서 적용 */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- header 태그 사용 -->
+        <div id="header"></div>
+        <!-- main 태그 혹은 section 태그 사용 -->
+        <div id="content">
+            <!-- article 혹은 div 태그 사용 -->
+            <div id="content1"></div>
+            <div id="content2"></div>
+            <div id="content3"></div>
+        </div>
+        <!-- footer 태그 사용 -->
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관련 스타일</title>
+
+    <style>
+        #c {
+            color: red;
+            color: #0b2f88;
+            color: rgb(50, 250, 188);
+            color: rgba(0, 0, 0, 0.5);
+
+            /*
+                색상 h : 0 ~ 360
+                채도 s : 0% ~ 100%
+                명도 l : 0% ~ 100%
+            */
+            color: hsl(246, 81%, 46%);
+            color: hsla(246, 81%, 46%, 0.842);
+        }
+
+        #td1 {
+            text-decoration: overline;
+        }
+
+        #td2 {
+            text-decoration: line-through;
+        }
+
+        #td3 {
+            text-decoration: underline;
+        }
+
+        #td4 {
+            text-decoration: none;
+            background-color: green;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        #td4:hover {
+            background-color: darkgreen;
+        }
+
+        #tt1 {
+            text-transform: uppercase;
+        }
+
+        #tt2 {
+            text-transform: lowercase;
+        }
+
+        #tt3 {
+            text-transform: capitalize;
+        }
+
+        .shadow {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+
+        #ts1 {
+            color: brown;
+            text-shadow: 5px 5px 5px black;
+            text-shadow: -5px -5px 5px black;
+        }
+
+        #ts2 {
+            /* ★★ */
+            color: white;
+            text-shadow: 0px 0px 10px black; /* 입체감 */
+        }
+
+        #ts3 {
+            /* ★★★ */
+            text-shadow: 0px 0px 4px darkgrey,
+                        0px -5px 4px yellow,
+                        0px -10px 8px orangered,
+                        0px -15px 16px red;
+        }
+    </style>
+</head>
+<body>
+    <h1>텍스트 관련 스타일(text ~)</h1>
+    <h2>color : 텍스트 색상 변경</h2>
+    <pre id="c">
+        선택자 {
+            color: 색상명 | 16진수 | rgb(r, g, b) | rgba(r, g, b, a) | hsl(h, s, l) | hsla(h, s, l, a);
+        }
+    </pre>
+
+    <hr>
+
+    <u>Hello</u>
+    <s>hello</s>
+
+    <h3>text-decoration : 텍스트에 줄을 표시하거나 제거할 때 사용</h3>
+    <pre>
+        선택자 {
+            text-decoration: none | underline | line-through | overline;
+        }
+    </pre>
+
+    <ul>
+        <li id="td1">텍스트에 줄 긋기</li>
+        <li id="td2">텍스트에 줄 긋기</li>
+        <li id="td3">텍스트에 줄 긋기</li>
+    </ul>
+
+    <a id="td4" href="http://www.naver.com" target="_blank">네이버</a>
+
+    <hr>
+
+    <h3>text-transform : 영문 텍스트의 대소문자 변환 시 사용</h3>
+    <pre>
+        선택자 {
+            text-transform: uppercase | lowercase | capitalize;
+        }
+    </pre>
+
+    <ul>
+        <li id="tt1">uppercase : 모든 영문자를 대문자로 변환</li>
+        <li id="tt2">LOWERCASE : 모든 영문자를 소문자로 변환</li>
+        <li id="tt3">capitalize test : 영문자의 첫 글자만 대문자로 변환</li>
+    </ul>
+
+    <hr>
+    <h3>text-shadow : 텍스트에 그림자 효과를 줄 때 사용</h3>
+    <pre>
+        선택자 {
+            text-shadow: 가로거리(x) 세로거리(y) [번짐정도] [색상]
+        }
+    </pre>
+
+    <div>
+        <span class="shadow" id="ts1">COOKIE</span> <br /><br /><br />
+        <span class="shadow" id="ts2">COOKIE</span> <br /><br /><br />
+        <span class="shadow" id="ts3">COOKIE</span> <br />
+    </div>
+    
+    <h3>text-align: 텍스트 정렬</h3>
+    <pre>
+        선택자 {
+            text-align: left(기본값) | center | right | justify(양쪽 정렬);
+        }
+    </pre>
+
+    <h4>왼쪽 정렬</h4>
+    <p style="text-align: left;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h4>오른쪽 정렬</h4>
+    <p style="text-align: right;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h4>가운데 정렬</h4>
+    <p style="text-align: center;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h4>양쪽 정렬</h4>
+    <p style="text-align: justify;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    
+    <hr>
+    <h3>line-height : 줄 간격 조절(장평 조절)</h3>
+    <pre>
+        선택자 {
+            line-height: normal(기본) | px | em | %;
+        }
+    </pre>
+
+    <h4>고정 단위 간격</h4>
+    <p style="line-height: 30px;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h4>가변 단위 간격(em)</h4>
+    <p style="line-height: 2.5rem;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <h4>가변 단위 간격(%)</h4>
+    <p style="line-height: 200%;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries,
+        but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
