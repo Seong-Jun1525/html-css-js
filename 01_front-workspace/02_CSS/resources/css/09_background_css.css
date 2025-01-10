@@ -1,0 +1,36 @@
+#bg1 {
+    width: 50%;
+    background-color: greenyellow;
+    padding: 1rem;
+    text-align: justify;
+    border: 30px solid orangered;
+    box-sizing: border-box; /* 기본적으로는 content 영역으로만 width를 잡지만 테두리를 포함한 width를 적용하기 위한 속성 값 */
+}
+
+.bc-class {
+    background-color: greenyellow;
+    margin: 30px;
+    padding: 20px;
+    border: 15px double orangered;
+}
+
+#bc1 {
+    background-clip: border-box;
+}
+#bc2 {
+    background-clip: padding-box;
+}
+#bc3 {
+    background-clip: content-box;
+}
+
+#bg2 {
+    border: 3px solid blueviolet;
+    width: 70%;
+    height: 700px;
+    background-image: url("resources/image/code.png");
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    background-position: 50% 50%; /* left top (기본값) */
+    background-attachment: fixed;
+}

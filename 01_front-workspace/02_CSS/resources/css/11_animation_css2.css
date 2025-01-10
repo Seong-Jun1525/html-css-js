@@ -1,0 +1,11 @@
+#scale-box {
+    width: 100px;
+    height: 100px;
+    border: 3px solid;
+    transition: 2s ease-in-out;
+}
+
+#scale-box:hover {
+    background-color: slateblue;
+    transform: scale(0.5);
+}

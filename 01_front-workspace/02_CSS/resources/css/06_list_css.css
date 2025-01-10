@@ -1,0 +1,23 @@
+#ul1 {
+    text-transform: capitalize;
+    list-style-type: disc;
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: none;
+
+    list-style-image: url(../02_CSS/resources/image/code.png);
+
+    list-style-position: inside;
+}
+
+#ol1 {
+    list-style-type: decimal; /* 기본값 */
+    list-style-type: decimal-leading-zero;
+    list-style-type: lower-alpha;
+    list-style-type: upper-alpha;
+    list-style-type: lower-roman;
+    list-style-type: upper-roman;
+
+    list-style-position: outside;
+    list-style-position: inside;
+}

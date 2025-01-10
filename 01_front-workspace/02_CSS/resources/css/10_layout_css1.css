@@ -1,0 +1,50 @@
+.size-text {
+    border: 10px solid green;
+}
+
+#size1 {
+    width: 500px;
+    height: 300px;
+}
+
+#size2 {
+    width: 50%;
+    height: 150px; /* 세로길이는 부모요소에 고정크기를 주면 가변크기로 설정할 수 있음 */
+}
+
+.red {
+    background-color: red;
+}
+
+.skyblue {
+    background-color: skyblue;
+}
+
+.green {
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+}
+.violet {
+    background-color: violet;
+}
+
+.display-test {
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+}
+
+.inline {
+    display: inline; /* inline요소는 가로세로 길이를 변경할 수 없음 */
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}

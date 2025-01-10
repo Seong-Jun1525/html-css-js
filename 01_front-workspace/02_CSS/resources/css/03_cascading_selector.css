@@ -1,0 +1,22 @@
+h1 {
+    background-color: aquamarine;
+}
+
+h1 {
+    /* 가장 마지막에 적용한 속성값이 적용됨 */
+    background-color: blueviolet;
+}
+
+#id1 {
+    background-color: darkslateblue;
+}
+
+.class1 {
+    background-color: lightblue;
+    color: blue;
+}
+
+div {
+    background-color: crimson !important;
+    color: yellow;
+}

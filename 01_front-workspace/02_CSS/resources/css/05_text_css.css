@@ -1,0 +1,75 @@
+#c {
+    color: red;
+    color: #0b2f88;
+    color: rgb(50, 250, 188);
+    color: rgba(0, 0, 0, 0.5);
+
+    /*
+        색상 h : 0 ~ 360
+        채도 s : 0% ~ 100%
+        명도 l : 0% ~ 100%
+    */
+    color: hsl(246, 81%, 46%);
+    color: hsla(246, 81%, 46%, 0.842);
+}
+
+#td1 {
+    text-decoration: overline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: underline;
+}
+
+#td4 {
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#td4:hover {
+    background-color: darkgreen;
+}
+
+#tt1 {
+    text-transform: uppercase;
+}
+
+#tt2 {
+    text-transform: lowercase;
+}
+
+#tt3 {
+    text-transform: capitalize;
+}
+
+.shadow {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+#ts1 {
+    color: brown;
+    text-shadow: 5px 5px 5px black;
+    text-shadow: -5px -5px 5px black;
+}
+
+#ts2 {
+    /* ★★ */
+    color: white;
+    text-shadow: 0px 0px 10px black; /* 입체감 */
+}
+
+#ts3 {
+    /* ★★★ */
+    text-shadow: 0px 0px 4px darkgrey,
+                0px -5px 4px yellow,
+                0px -10px 8px orangered,
+                0px -15px 16px red;
+}
