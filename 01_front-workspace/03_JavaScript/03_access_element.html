@@ -94,6 +94,11 @@
             // console.log(listItem[0].innerHTML);
             console.log(listItem[0].innerText);
             console.log(listItem[3].innerHTML);
+
+            for(let i = 0; i < listItem.length; i++) {
+                listItem[i].innerHTML = `${i}번째 요소입니다.`;
+                console.log(listItem[i].innerHTML);
+            }
         }
     </script>
 </body>
