@@ -34,28 +34,10 @@
     </ol>
 
     <script>
-        // alert("메시지");
-        console.log("콘솔");
+        
     </script>
 
     <button onclick="documentWrite();">화면에 출력</button>
-    <script>
-        function documentWrite() {
-            document.write("<b>자바스크립트</b>");
-            document.write(`
-                <table border="1">
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-                </table>
-            `);
-        }
-    </script>
 
     <hr>
 
@@ -65,25 +47,6 @@
         그 값을 변경하고자 할 때 <b>innerHTML, innerTEXT</b>라는 속성에 접근<br>
     </div>
     <button onclick="elementTest();">확인</button>
-
-    <script>
-        function elementTest() {
-            let divEl = document.getElementById("area1");
-            console.log(divEl); // 출력 결과가 null인지 확인하기
-            console.log(divEl.id);
-            console.log(divEl.className);
-            console.log(divEl.innerHTML); // 내용(태그 포함)
-            console.log(divEl.innerText); // 내용(태그 미포함)
-
-            divEl.innerHTML = `
-                <h4>innerHTML을 사용하여 내용 변경</h4>
-            `;
-            // => HTML 태그가 포함된 내용을 반영하고자 할 때 사용
-
-            divEl.innerText = "<h4>innerText를 사용하여 내용 변경</h4>";
-            // => 텍스트만 있는 내용을 반영하고자 할 때
-        }
-    </script>
     <br><br>
     
     <button onclick="test1()">innerHTML 조회</button>
@@ -99,27 +62,6 @@
         <h2>헷갈리나요?</h2>
         <p>그만.....</p>
     </div>
-
-    <script>
-        let resultEl = document.getElementById("result");
-
-        function test1() {
-            alert(resultEl.innerHTML);
-        }
-        function test2() {
-            alert(resultEl.innerText);
-        }
-        function test3() {
-            resultEl.innerHTML = `
-                <mark>벌써 3시네요</mark>
-            `;
-        }
-        function test4() {
-            resultEl.innerText = `
-                <mark>벌써 3시네요</mark>
-            `;
-        }
-    </script>
 
     <h3>데이터를 입력 받는 구문(변수에 저장)</h3>
     <ol>
@@ -138,25 +80,6 @@
     <button onclick="confirmTest();">클릭</button>
     <div id="area2" class="area"></div>
 
-    <script>
-        function confirmTest() {
-            let area2El = document.getElementById("area2");
-            let r = confirm("졸려요?");
-            console.log(r);
-
-            if(r) {
-                area2El.innerHTML = `
-                    <h2>정신차려요</h2>
-                `
-            }
-            else {
-                area2El.innerHTML = `
-                    <h2>굳입니다.</h2>
-                `
-            }
-        }
-    </script>
-
     <br>
     <h4>[window.]prompt("질문 내용");</h4>
     <p>
@@ -167,27 +90,6 @@
 
     <button onclick="promptTest();">클릭</button>
     <div id="area3" class="area"></div>
-
-    <script>
-        function promptTest() {
-            let area3El = document.getElementById("area3");
-
-            let name = prompt("이름을 입력하세요?");
-            let age = prompt("나이는 어떻게 되나요?");
-
-            if(name !== null && age !== null) {
-                area3El.innerHTML = `
-                    <p style="margin: 0;">이름 : ${name}</p>
-                    <p style="margin: 0;">나이 : ${age}</p>
-                `;
-            }
-            else {
-                area3El.innerHTML = `
-                    <b style="color: red;">아무것도 입력하지 않았습니다.</b>
-                `;
-            }
-        }
-    </script>
 
     <br><br>
 
@@ -205,26 +107,7 @@
     <input type="button" value="로그인" onclick="loginTest();" />
     <input type="text" id="area4" style="font-size: 1.3rem;" disabled>
 
-    <script>
-        function loginTest() {
-            let userId = document.getElementById("userId");
-            let userPw = document.getElementById("userPw");
-
-            console.log(userId.value);
-            console.log(userPw.value);
-
-            let area4El = document.getElementById("area4");
-
-            if(userId.value !== "" && userPw.value !== "") {
-                area4El.value = `${userId.value}, ${userPw.value}`;
-                userId.value = "";
-                userPw.value = "";
-            }
-            else {
-                area4El.value = "둘중 하나가 입력되지 않았습니다."
-            }
-        }
-    </script>
+    
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
