@@ -44,23 +44,68 @@
 
     <br>
     <h3>3) name 속성을 이용하여 요소 가져오기</h3>
+
+    <p>
+        document.getElementsByName("name속성값");<br>
+        → 선택된 요소 객체들이 배열 형태로 반환
+    </p>
+
     <form action="">
         <fieldset>
             <legend>취미</legend>
 
-            <input type="checkbox" name="hobby" id="all" onchange="checkAll();">
+            <input type="checkbox" name="hobby" id="all" value="all" onchange="checkAll();">
             <label for="all">전체 선택</label>
             
-            <input type="checkbox" name="hobby" id="music">
+            <input type="checkbox" name="hobby" id="music" value="music" onchange="checkBoxTrigger();">
             <label for="music">음악감상</label>
             
-            <input type="checkbox" name="hobby" id="movie">
+            <input type="checkbox" name="hobby" id="movie" value="movie" onchange="checkBoxTrigger();">
             <label for="movie">영화감상</label>
             
-            <input type="checkbox" name="hobby" id="youtube">
+            <input type="checkbox" name="hobby" id="youtube" value="youtube" onchange="checkBoxTrigger();">
             <label for="youtube">유튜브</label>
         </fieldset>
     </form>
+
+    <br><br>
+    <h3>4) class 속성을 이용하여 요소 가져오기</h3>
+    <p>
+        document.getElementsByClassName("클래스명");<br>
+        → 선택된 요소 객체들이 배열 형태로 반환
+    </p>
+
+    <div class="test"></div>
+    <p class="test"></p>
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test test1 test2"></pre>
+    <button onclick="accessClass();">class 접근</button>
+
+    <br><br>
+    <h3>5) 내 마음대로 접근하기(선택자 활용)</h3>
+    <p>
+        선택자를 이용하여 요소에 접근할 때<br>
+        * document.querySelector("선택자");<br>
+        → 선택자에 해당하는 요소 하나만 반환
+        <br><br>
+        *document.querySelectorAll("선택자");<br>
+        → 선택자에 해당하는 모든 요소를 배열형태로 반환
+    </p>
+    <div id="tmp1">
+        안녕하세요????
+        <h3>오늘은 금요일!</h3>
+    </div>
+    <div id="tmp2">
+        <h3>웹 표준의 정석</h3>
+        <h3>이벤트 처리</h3>
+        <span>숏박스</span>
+    </div>
+    <h3>김원훈</h3>
+    <br>
+    <button onclick="accessSelector();">내 마음대로 접근</button>
 
     <script src="./res/js/03_access_element.js"></script>
 
