@@ -18,13 +18,14 @@ function checkAll() {
 // 전체 선택 제외 모두 true일 시 전체선택도 true
 function checkBoxTrigger() {
     let allChecked = true;
-    const hobbyList = document.getElementsByName("hobby");
+    let hobbyList = document.getElementsByName("hobby");
 
     for(let h of hobbyList) {
-        if(h.value === "all") continue;
+        if(h.value === "전체선택") continue;
         if(!h.checked) allChecked = false;
     }
 
+    console.log(allChecked);
     document.getElementById("all").checked = allChecked;
 }
 

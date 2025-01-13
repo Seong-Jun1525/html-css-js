@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #ageBox {
+            color: red;
+            font-size: 5rem;
+        }
+
+        button {
+            background-color: orange;
+            font-size: 3rem;
+            border: 1rem ridge orangered;
+            color: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            transition: .2s ease-in-out;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: darkorange;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        - 다음 중 변수명으로 사용하기 적절한 것은 ?
+        2025year, year2025, import*, age, let
+        => year2025, age
+
+        - "아메리카노"라는 데이터를 변수에 선언 및 할당
+        => let coffee = "아메리카노";
+        => let coffee; coffee = "아메리카노";
+
+        - 4000이라는 데이터를 변수에 초기화
+        => const data = 4000;
+
+        - 변수에 저장된 데이터의 자료형을 확인하는 함수
+        => typeof
+
+        - 사용자에게 출생년도를 입력받아 나이 출력하기
+        (현재 연도를 상수로 저장하여 사용)
+        * 나이계산 : 현재 연도 - 출생년도 + 1
+
+        const y = new Date();
+        const currentYear = y.getFullYear();
+        const birthYear = prompt();
+        const age = currentYear - birthYear + 1;
+        console.log(age); 
+    -->
+    <div id="content">
+        <div id="ageBox"></div>
+        <button onclick="ageFuc();">나이계산</button>
+    </div>
+    <script>
+
+        function ageFuc() {
+            const ageBox = document.querySelector("#ageBox");
+
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+
+            const birthYear = prompt("출생년도를 입력하세요");
+            let age = currentYear - birthYear + 1;
+            // console.log(age);
+            ageBox.innerHTML = `<h1>${age}살</h1>`;
+        }
+    </script>
+</body>
+</html>
