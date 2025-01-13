@@ -66,8 +66,9 @@ function selectCategoryBtn() {
         if(hobbyList[i].value === "전체선택") continue; // 이 부분 추가
         if(hobbyList[i].checked) checkedHobbyList.push(hobbyList[i].value);
     }
-    categoryBox.innerHTML = checkedHobbyList.toString();
+    categoryBox.innerHTML = checkedHobbyList.join(" ");
 
+    // 쓸데없는 for문은 효율성이 떨어진다
     // for(let i of checkedHobbyList) {
     //     categoryBox.innerHTML += i.value + "&nbsp;";
     // }

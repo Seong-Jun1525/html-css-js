@@ -1,0 +1,16 @@
+다음 코드의 실행 결과를 작성해보세요.
+------------------------------
+let arr = [10, 20, 30, "한"];
+
+console.log(arr[1]);                                                    => 20
+console.log(arr.length);                                                => 4
+console.log(arr.indexOf("김"));                                         => -1
+
+-------------------------------
+-------------------------------
+let arr2 = new Array("자바", "HTML5", "CSS", "Spring");
+
+arr2[0] = "Java";
+
+console.log(arr2);                                                      => ["Java", "HTML5", "CSS", "Spring"]
+-------------------------------
