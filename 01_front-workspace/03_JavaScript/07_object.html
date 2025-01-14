@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+
+    <style>
+        .area {
+            border: 3px solid darkorange;
+            background-color: darkgreen;
+            color: white;
+            font-style: italic;
+            font-size: 1.3rem;
+            padding: 1rem;
+        }
+
+        .big {
+            height: 500px;
+        }
+
+        .small {
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        변수 : 하나의 데이터
+        배열 : 여러개의 데이터
+        객체 : 여러개의 데이터 + 기능(함수) => key: value
+
+        객체의 모든 속성을 출력하려면 
+        단순 for, while문으로는 출력이 불가함
+        그래서 for-in문을 사용해야함
+
+        (식별자로 사용할 수 없는 문자(띄어쓰기, 특수문자)를 속성으로 사용할 경우
+        ''로 묶어서 선언하고 접근 시에는 []만 가능)
+
+        in: 객체 내부에 해당 속성이 있는지 확인하는 키워드
+        with: 코드를 줄여주는 키워드, 호출 시 객체 명 생략 가능
+    -->
+
+    <h1>객체</h1>
+    <h3>객체 선언 및 사용</h3>
+    <p>
+        객체는 {}를 사용해서 생성,<br>
+        {} 안에 필요한 속성들을 정의한다.
+        <br><br>
+        형태 → 속성명(key): 속성값(value)  
+        <br><br>
+        객체를 파일로 저장할 때 확장자를 .json으로 설정<br>
+        JSON형식이라고 표현하기도 한다.  
+    </p>
+    <pre>
+        변수 = {
+            속성명: 속성값,
+            속성명: 속성값,
+            속성명: 속성값,
+            ...
+        }
+    </pre>
+
+    <button onclick="test1();">실행</button>
+
+    <div class="area big" id="area1"></div>
+
+    <hr>
+    <h3>객체에서의 반복문</h3>
+    <button onclick="test2();">실행</button>
+    <div class="area small" id="area2"></div>
+
+    <hr>
+    <h3>객체의 함수 속성 : 메서드</h3>
+    <p>
+        객체의 속성 중 함수 형태의 속성을 메서드라고 부름
+    </p>
+
+    <button onclick="test3();">실행</button>
+    <div class="area small" id="area3"></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./res/js/07_object.js"></script>
+</body>
+</html>

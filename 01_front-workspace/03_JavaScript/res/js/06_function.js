@@ -57,3 +57,30 @@ function test4(target) {
 
     target.style.backgroundColor = "yellow";
 }
+
+function test5() {
+    document.getElementById("area5").innerHTML = random();
+}
+
+function sample() {
+    return "Hello?!";
+}
+
+function random() {
+    // 1 ~ 100 사이의 랜덤값을 반환
+    // Math.random() 0 ~ 0.9999...
+    // parseInt() 정수로 변환
+    return parseInt(Math.random() * 100 + 1);
+}
+
+function test6() {
+    // const userName = document.querySelector("#userName").value;
+    // console.log(userName);
+
+    const getName = function() {
+        const userName = document.querySelector("#userName").value;
+        console.log(userName);
+    }
+
+    return getName; // test6() 자체가 getName이다. 왜냐 getName이 함수이기 때문이다.
+}

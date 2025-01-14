@@ -72,7 +72,20 @@
     <button onclick="test4(this)">버튼2</button>
     <input type="button" value="버튼3" onclick="test4(this)" />
 
-    
+    <hr>
+
+    <h2>함수의 리턴</h2>
+    <h3>일반적인 값 리턴</h3>
+
+    <button onclick="test5();">실행</button>
+    <div class="area" id="area5" style="overflow-y: auto;"></div>
+
+    <br>
+    <h3>익명 함수 리턴</h3>
+    <label for="userName">이름 : </label>
+    <input type="text" id="userName" name="userName" />
+    <button onclick="test6()();">실행</button>
+    <!-- test6() 자체가 getName이기때문에 getName을 호출하려면 test6()()으로 해야함 -->
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script src="./res/js/06_function.js"></script>
