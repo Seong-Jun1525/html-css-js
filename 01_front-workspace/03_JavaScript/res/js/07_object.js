@@ -76,13 +76,194 @@ function test3() {
         kind: "웰시코기",
         eat: function(food) {
             console.log(`${food}를 먹는다`);
+
+            // this : 객체 내부에서 사용 시 해당 객체를 가리킴
             area3.innerHTML += `
                 <em>
-                    ${this.name}가 ${food}를 먹는다
+                    ★${this.name}가 ${food}를 먹었습니다★<br>
                 </em>
             `;
         }
     };
 
-    dog.eat("간식");
+    area3.innerHTML += `
+        이름 : ${dog.name}<br>
+        종류 : ${dog.kind}<br>
+    `
+
+    dog.eat("고구마");
+    dog.eat("사료");
+}
+
+function test4() {
+    // 학생 정보 저장 객체
+    // value 속성으로 값을 꺼내올 때는 문자열이다
+    const userName = document.getElementById("userName").value;
+    const kor = document.getElementById("kor").value;
+    const math = document.getElementById("math").value;
+    const eng = document.getElementById("eng").value;
+
+    const area4 = document.getElementById("area4");
+
+    const student = {
+        studentName: userName,
+        korScore: parseInt(kor),
+        mathScore: parseInt(math),
+        engScore: parseInt(eng),
+        toString: function() {
+            return `
+                ${this.studentName} : ${this.korScore} 점 ${this.mathScore} 점 ${this.engScore} 점<br>
+            `;
+        },
+        getSum: function() {
+            let total = 0;
+            // input 타입이 number이여도 데이터 타입은 문자열이다.
+            // 즉, 형변환을 해줘야 함
+            total = this.korScore + this.mathScore + this.engScore;
+            return total;
+        },
+        getAvg: function() {
+            return this.getSum() / 3;
+        }
+    };
+
+    area4.innerHTML = `
+        ★학생정보★<br>
+        ${student.toString()}
+    `;
+
+    // for in 사용
+    area4.innerHTML += `
+        studentName 속성이 있는가? 
+        ${"studentName" in student ? "있다" : "없다"}<br>
+
+        age 속성이 있는가? 
+        ${"age" in student ? "있다" : "없다"}<br>
+    `;
+
+    // with 사용
+    with(student) {
+        area4.innerHTML += `
+            이름 : ${studentName}<br>
+            국어 : ${korScore}<br>
+            수학 : ${mathScore}<br>
+            영어 : ${engScore}<br>
+
+            총점 : ${getSum()}<br>
+            평균 : ${getAvg()}<br>
+        `
+    }
+}
+
+function test5() {
+    const area5 = document.getElementById("area5");
+
+    let student = {};
+
+    // 속성 추가하기
+    student.name = "임성준";
+    student.hobby = ["알고리즘 공부", "YouTube 시청"];
+    student.toString = function() {
+        return `이름 : ${this.name}, 취미 : ${this.hobby}<br>`
+    }
+
+    console.log(student);
+    
+    area5.innerHTML += `
+        이름 : ${student.name}<br>
+        취미 : ${student.hobby}<br>
+        student => ${student}
+    `;
+
+    // 학생 이름 속성 제거
+    delete(student.name); // 속성 자체를 삭제
+    console.log(student);
+
+    // 학생 취미 속성값만 제거
+    student.hobby = null; // 속성 유지 값만 삭제
+    console.log(student);
+}
+
+const test6 = () => {
+    const area6 = document.getElementById("area6");
+    area6.innerHTML = "";
+    const student0 = {name: "구세연", age: 27, gender: "여"};
+    const student1 = {name: "임성준", age: 26, gender: "남"};
+    const student2 = {name: "김일현", age: 25, gender: "남"};
+    const student3 = {name: "유성재", age: 26, gender: "남"};
+
+    const stdArr = [];
+    stdArr.push(student0);
+    stdArr.push(student1);
+    stdArr.push(student2);
+    stdArr.push(student3);
+
+    console.log(stdArr[2]);
+    console.log(stdArr[2].name);
+    console.log(stdArr[2]["age"]);
+
+    // for(let s of stdArr) {
+    //     area6.innerHTML += `${s.name}<br>`;
+    // }
+    for(let i = 0; i < stdArr.length; i++) {
+        area6.innerHTML += `${stdArr[i].name}<br>`;
+    }
+    area6.innerHTML += "<hr>"
+
+    for(let i = 0; i < stdArr.length; i++) {
+        stdArr[i].point = 0;
+    }
+    
+    console.log(stdArr);
+
+    for(let i = 0; i < stdArr.length; i++) {
+        stdArr[i].toString = function() {
+            return `name: ${this.name}, gender: ${this.gender}, age: ${this.age}, point: ${this.point}`;
+        };
+    }
+
+    for(let i = 0; i < stdArr.length; i++) {
+        console.log(stdArr[i].toString());
+    }
+
+    for(let i = 0; i < stdArr.length; i++) {
+        area6.innerHTML += `${stdArr[i]}<br>`;
+    }
+}
+
+// 사람의 정보를 담는 객체(생성자 함수)
+// class Person {
+//     constructor(name, age, gender, point) {
+//         this.name = name;
+//         this.age = age;
+//         this.gender = gender;
+//         this.point = point;
+//         this.toString = function () {
+//             return `${this.name}_${this.age}_${this.gender}_${this.point}`;
+//         };
+//     }
+// }
+
+function Person(name, age, gender, point) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.point = point;
+    this.toString = function () {
+        return `${this.name}_${this.age}_${this.gender}_${this.point}`;
+    };
+}
+
+const test7 = () => {
+    const area7 = document.getElementById("area7");
+    const person = new Person("성준", 26, "남", 1000);
+    const person2 = new Person("공유", 40, "남", 1000);
+
+    console.log(person.toString());
+    console.log(person2.toString());
+
+    area7.innerHTML += `
+        ${person.toString()}<br>
+        ${person2.toString()}<br>
+    `
 }

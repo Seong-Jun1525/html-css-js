@@ -1,0 +1,41 @@
+Q. 다음 중 반환값이 숫자타입인 함수는 무엇인가?
+----------------------------------
+function func1() {
+	let a = 10;
+	let b = 20;
+	
+	console.log(a+b);
+}
+
+function func2() {
+	let a = 10;
+	let b = 20;
+	
+	return a + b;
+}
+
+function func3() {
+	let a = 10;
+	let b = "20";
+	return a + b;
+}
+
+function func4() {
+	return Math.random();
+}
+----------------------------------
+func2, func4
+
+Q. 다음 코드 실행 시 예상 결과대로 나오지 않았다. 잘못된 부분을 수정해보자.
+----------------------------------
+function sum(a) {
+	return a;
+}
+
+console.log(sum(1, 2));     // 결과: 3
+console.log(sum(10, 30));   // 결과: 40
+----------------------------------
+
+function sum(a, b) {
+	return a + b;
+}

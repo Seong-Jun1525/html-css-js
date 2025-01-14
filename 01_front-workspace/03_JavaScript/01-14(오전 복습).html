@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function func1() {
+            let a = 10;
+            let b = 20;
+            
+            console.log(a+b);
+        }
+
+        function func2() {
+            let a = 10;
+            let b = 20;
+            
+            return a + b;
+        }
+
+        function func3() {
+            let a = 10;
+            let b = "20";
+            return a + b;
+        }
+
+        function func4() {
+            return Math.random();
+        }
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(func2());
+        console.log(func4());
+
+
+        console.log(sum(1, 2));     // 결과: 3
+        console.log(sum(10, 30));   // 결과: 40
+    </script>
+</body>
+</html>
