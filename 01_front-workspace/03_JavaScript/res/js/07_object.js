@@ -267,3 +267,69 @@ const test7 = () => {
         ${person2.toString()}<br>
     `
 }
+
+const test8 = () => {
+    // 연도 : getFullYear() -> YYYY
+    // 월   : getMonth() + 1 -> mm
+    // 일   : getDate() -> dd
+    // 요일 : getDay() -> 숫자 타입 0 ~ 6
+    // 시   : getHours() 
+    // 분   : getMinutes() 
+    // 초   : getSeconds() 
+
+    const area8 = document.getElementById("area8");
+
+    const now = new Date();
+
+    // getTime() : ms 단위로 출력
+
+    area8.innerHTML = `현재 날짜 및 시간(getTime()) : ${now.getTime()}<br>`;
+
+    // 2024년 12월 31일 날짜로 생성
+    const begin = new Date(2024, 11, 31); // 연도, 월-1, 일
+    const endDay = new Date(2025, 5, 18, 13, 0, 0); // 연도, 월-1, 일, 시, 분, 초
+    let day = endDay.getDay();
+
+    area8.innerHTML = `
+        ${begin.getTime()}<br>
+        ${endDay.getTime()}<br>
+        <hr>
+        현재 : ${now}<br>
+        개강일 : ${begin}<br>
+        종강일 : ${endDay}<br>
+        연도 : ${endDay.getFullYear()}<br>
+        월 : ${endDay.getMonth()}<br>
+        일 : ${endDay.getDate()}<br>
+        요일 : ${dayInfo2(day)}<br>
+        시 : ${endDay.getHours()}<br>
+        분 : ${endDay.getMinutes()}<br>
+        초 : ${endDay.getSeconds()}<br>
+        <hr>
+        종강일 까지 얼마나 남았는가 ? ${Math.round((endDay - now) / (1 * 1000 * 60 * 60 * 24))}일
+    `
+
+    function dayInfo2(day) {
+        const dayArr = ["일", "월", "화", "수", "목", "금", "토"];
+        return dayArr[day];
+    }
+
+    // 요일 정보 반환 함수
+    function dayInfo(day) {
+        switch(day) {
+            case 0:
+                return "일";
+            case 1:
+                return "월";
+            case 2:
+                return "화";
+            case 3:
+                return "수";
+            case 4:
+                return "목";
+            case 5:
+                return "금";
+            case 6:
+                return "토";
+        }
+    }
+}
