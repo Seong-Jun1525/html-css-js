@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        .area {
+            border: 2px solid salmon;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <h2>이벤트 모델 종류</h2>
+    <h3>1) 고전 이벤트 모델(기본)</h3>
+    <p>
+        특정 요소 객체를 가지고와서 해당 요소의 이벤트 속성에 접근한 후<br>
+        이벤트 핸들러를 연결하는 방식 <b>(이벤트 제거 가능)</b>
+    </p>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+
+    <div class="area" id="area1" style="overflow-y: auto;"></div>
+
+    <hr>
+    <h3>2) 인라인 이벤트 모델</h3>
+    <p>
+        요소 내부에 직접 이벤트 속성을 작성하여 실행할 내용을 정의하는 방식<br>
+        주로, 스크립트 내에 정의되어 있는 함수를 호출하는 방식 사용
+    </p>
+    <button
+        onclick="document.getElementById('area2').innerHTML += '인라인 1 클릭<br>'"
+    >
+        인라인1
+    </button>
+    <button onclick="inlineTest();">인라인2</button>
+    <div class="area" id="area2" style="overflow-y: auto;" ></div>
+
+    <h3>3) 표준 이벤트 모델</h3>
+    <p>
+        w3c에서 공식적으로 지정한 이벤트 모델<br>
+        ie에서 9버전부터 사용하기 시작
+    </p>
+
+    <button id="btn3">표준확인</button>
+
+    <hr>
+
+    <h2>이벤트가 발생한 요소 객체에 접근하기</h2>
+    <button id="btn4">고전이벤트 방식</button>
+    <button id="btn5">표준이벤트 방식</button>
+    <button 
+        id="btn6"
+        onclick="
+            this.style.backgroundColor = `
+                rgb(${Math.floor(Math.random() * 256)}, 
+                    ${Math.floor(Math.random() * 256)}, 
+                    ${Math.floor(Math.random() * 256)})`;
+        "
+    >
+        인라인 방식1
+    </button>
+    <button 
+        id="btn7"
+        onclick="changeColor(this);"
+    >
+        인라인 방식2
+    </button>
+
+    <hr>
+    <h2>태그 별 기본적으로 가지고 있는 이벤트 제거</h2>
+    <!-- <a href="http://www.naver.com">링크태그</a> -->
+    <ul>
+        <li>a 태그 : 클릭 시 href 속성을 통해 url을 요청(페이지 이동)</li>
+        <li>form 태그 내 submit 버튼 : 버튼 클릭 시 사용자가 입력한 값들을 form태그의 action속성을 통해 해당 url로 요청(제출)</li>
+    </ul>
+    <br><br>
+    <p>
+        태그 내의 기본적으로 설정된 이벤트가 실행되지 않게 하는 방법<br>
+        이벤트 핸들러의 반환 값을 false로 주면 이벤트가 동작되지 않는다
+    </p>
+
+    <h4>a 태그 테스트</h4>
+    <a href="http://www.naver.com" onclick="alert('이동하시겠습니까?'); return false;">네이버로</a>
+    <a href="http://www.naver.com" onclick="test1();">네이버로</a>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="./res/js/09_event.js"></script>
+</body>
+</html>

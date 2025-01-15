@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습 - 25/01/15 PM</title>
+
+    <style>
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .question-area {
+            border: 1px solid #655b50;
+            border-radius: 10px;
+            margin: 1.1em;
+            padding: 2em;
+            box-shadow: 0px 0px 10px;
+        }        
+
+        #result {
+            padding: 1.2em;
+            border: 2px solid seagreen; box-shadow: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="question-area">
+            <h2>나이 계산</h2>
+            <em>입력된 생년월일 정보를 사용하여 나이 계산</em>
+            <hr>
+            <label for="birthYear">출생년도:</label>
+            <input type="number" id="birthYear">
+            <br>
+            <label for="birthMonth">출생월: </label>
+            <input type="number" id="birthMonth">
+            <br>
+            <label for="birthDate">출생일: </label>
+            <input type="number" id="birthDate">
+            <hr>
+            <button onclick="getAge();">확인</button>
+            <br><br>
+
+            <div id="result">
+                <em>여기에 결과를 출력해주세요.</em>
+            </div>
+        </div>
+    </div>
+    <script src="./res/js/01-15(오후복습).js"></script>
+</body>
+</html>

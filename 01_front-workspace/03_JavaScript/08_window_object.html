@@ -82,6 +82,33 @@
     <hr>
 
     <h2>DOM</h2>
+    <p>
+        HTML에 있는 각각의 요소들을 노드(Node)라고 표현함<br>
+        요소 노드(Element Node) : 태그 그 자체를 의미<br>
+        텍스트 노드(Text Node) : 태그 내의 내용 부분을 의미
+    </p>
+    <div>
+        <input type="text" name="" id="">
+        <h1></h1>
+        <ul>
+            <li>목록1</li>
+            <li>목록2</li>
+        </ul>
+    </div>
+    <hr>
+    <h3>노드 생성 관련 메서드</h3>
+    <h4>텍스트 노드가 존재하는 노드(시작태그, 종료태그)</h4>
+    <button onclick="test4();">노드 생성</button>
+    <div id="area4"></div>
+
+    <br>
+    <h3>텍스트 노드가 존재하지 않는 요소 노드 생성<br>(시작태그만 존재하는 태그)</h3>
+    <button onclick="test5();">노드 생성</button>
+    <div id="area5"></div>
+
+    <br>
+    <h3>노드 삭제 관련 메서드</h3>
+    <button onclick="test6();">노드 삭제</button>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script src="./res/js/08_window_object.js"></script>

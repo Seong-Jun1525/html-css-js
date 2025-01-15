@@ -50,6 +50,7 @@ const test3 = () => {
 }
 
 const stop = () => {
+    // setInterval은 무한으로 돌기 때문에 꼭 clearInterval을 해줘야함
     clearInterval(timer);
     area1.innerHTML += " 종료";
     console.log("종료");
@@ -59,4 +60,54 @@ onload = () => {
     setTimeout(() => {
         document.getElementById("area2").innerHTML = "오늘은 수요일 입니다.";
     }, 3000);
+}
+
+const test4 = () => {
+    const area4 = document.querySelector("#area4");
+
+    // innerHTML 사용해서 노드 추가
+    // area4.innerHTML = "<h4>안녕? 반가워!</h4>";
+
+    // document 객체 사용하여 노드 추가
+    const element = document.createElement("h4"); // => <시작태그></종료태그>
+    const textNode = document.createTextNode("안녕? 반가워!"); // => "안녕?반가워!" 라는 텍스트 생성
+
+    element.appendChild(textNode);
+    console.log(element);
+    // <h4>안녕?반가워!</h4> object로 되어 있으므로 innerHTML이 아닌 appendChild로 추가해야함
+
+    area4.appendChild(element);
+
+    // <mark><b>강조태그!</b></mark>
+    const markElement = document.createElement("mark");
+    const bElement = document.createElement("b");
+    const markTextNode = document.createTextNode("강조태그!");
+
+    // area4에 한번에 appendChild를 해주면 mark 태그가 안먹힘
+    // => 이유 : 이동한 자식 노드를 반환합니다. MDN 사이트 참조
+    bElement.appendChild(markTextNode);
+    markElement.appendChild(bElement);
+    console.log(markElement);
+
+    area4.appendChild(markElement);
+    // area4.appendChild(markElement.appendChild(markTextNode)); // <- No
+}
+
+const area5 = document.querySelector("#area5");
+const test5 = () => {
+    const imgEle = document.createElement("img");
+
+    imgEle.src = "./res/image/tree.jpg";
+    imgEle.alt = "이미지 찾지 못함(나무이미지)";
+    imgEle.width = "300";
+    imgEle.height = "300";
+
+    area5.appendChild(imgEle);
+}
+
+const test6 = () => {
+    const imgList = document.querySelectorAll("#area5 img");
+
+    // 전체 삭제
+    for(let i of imgList) i.remove();
 }
