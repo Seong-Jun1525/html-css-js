@@ -71,8 +71,12 @@ const changeColor = (target) => {
             ${Math.floor(Math.random() * 256)})`;
 }
 
+// TODO
 const test1 = (target) => {
     // 이동하시겠습니까? 질문을 표시하고
     // 사용자 확인 버튼을 누르면 페이지 이동
     // 취소 버튼을 누르면 페이지 이동 x
+    const value = confirm("이동하시겠습니까?");
+
+    return value;
 }

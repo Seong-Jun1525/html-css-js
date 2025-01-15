@@ -1,6 +1,5 @@
 let userIdFlag = false;
 let userPwFlag = false;
-let userNameFlag = false;
 
 function checkUserId() {
     const userId = document.getElementById("userId").value;
