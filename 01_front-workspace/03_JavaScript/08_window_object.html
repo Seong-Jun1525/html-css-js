@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윈도우 객체</title>
+</head>
+<body>
+    <h1>Window 객체</h1>
+    <p>
+        window 객체는 js에서 최상위 객체<br>
+        크게 BOM과 DOM으로 나누어 짐
+    </p>
+
+    <ul>
+        <li>
+            BOM (Browser Object Model)
+            <ul>
+                <li>location(주소창 관련)</li>
+                <li>screen(창 관련)</li>
+                <li>navigator(브라우저 관련)</li>
+                <li>history(페이지 관련 기록)</li>
+            </ul>
+        </li>
+        <li>
+            DOM (Document Object Model)
+            <ul>
+                <li>document</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>[window.]open("url 주소" "창 이름", "창 특징")</h3>
+    <button onclick="test1();">네이버</button>
+
+    <hr>
+    <h3>[window.]setTimeout(함수, 시간)</h3>
+    <p>
+        설정한 시간 후에 함수의 내용을 실행(<b>한번만</b>)
+    </p>
+    <button onclick="test2();">실행</button>
+
+    <hr>
+
+    <h3>[window.]setInterval(함수, 시간)</h3>
+    <p>
+        설정한 시간마다 함수를 실행
+    </p>
+
+    <button onclick="test3();">시간확인</button>
+    <button onclick="stop();">정지</button>
+    <div id="area1" style="border: 3px solid salmon; height: 30px;"></div>
+
+    <hr>
+    <h3>[window.]onload</h3>
+
+    <p>
+        화면에 윈도우 객체의 로드가 완료되면 설정되어 있는 함수를 실행<br>
+        윈도우 객체의 로드 완료 → 모든 태그가 화면에 표시된 상태
+    </p>
+    <div id="area2" style="border: 3px solid salmon; height: 30px;"></div>
+
+    <hr>
+    <h2>BOM(Browser Object Model)</h2>
+    <h3>location 객체</h3>
+    <p>
+        브라우저의 주소창과 관련된 객체
+    </p>
+    <button onclick="console.log(location);">location 확인</button>
+    <br><br>
+    <a href="http://www.google.com">구글로 가자!</a><br><br>
+    <button onclick="location.href = 'http://www.google.com'">location 확인</button><br><br>
+    <div onclick="location.href = 'http://www.google.com'" style="cursor: pointer;">구글로 가는 방법2</div>
+    <br><br>
+
+    <!-- replace 뒤로가기 x -->
+    <button onclick="location.replace('http://www.google.com')">구글로...</button>
+    <br><br>
+
+    <button onclick="location.reload();">새로고침</button>
+    <button onclick="location.href = location.href;">새로고침</button>
+    <hr>
+
+    <h2>DOM</h2>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./res/js/08_window_object.js"></script>
+</body>
+</html>
