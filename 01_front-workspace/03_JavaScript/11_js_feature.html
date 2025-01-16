@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 특징들</title>
+</head>
+<body>
+    <h2>* 호이스팅(hoisting)</h2>
+    <p>
+        모든 변수 선언문이 코드의 최상단으로 이동되는 것처럼 느껴지는 현상<br>
+        <b>var 타입에서 확인</b>되고, let이나 const 타입에서는 호이스팅 일어나지 않는 것처럼 동작되게 해줌<br>
+    </p>
+
+    <button onclick="hoisting();">확인</button>
+
+    <hr>
+    <h2>* 스코프(변수의 범위)</h2>
+    <p>
+        변수의 사용 가능 범위<br>
+        - var : functional scope. 변수가 선언된 함수 영역 내에서 사용 가능<br>
+        - let, const : block scope. 변수가 선언된 블록 내에서만 사용 가능<br>
+    </p>
+
+    <button onclick="functionalScope();">var 확인</button>
+    <button onclick="blockScope();">let, const 확인</button>
+
+    <br><br>
+    
+    <h2>* 전역 변수, 지역 변수</h2>
+    <p>
+        - 전역 변수 : 특정 함수 영역 밖에 선언된 함수(어디서든 사용 가능)<br>
+        - 지역 변수 : 특정 범위 내에 선언된 변수
+    </p>
+
+    <hr>
+    <h2>* 배열 관련 메서드</h2>
+    <h4>배열.map(함수)</h4>
+    <p>
+        배열 내의 모든 요소 각각을 함수의 결과 값으로 새로운 배열을 만들어서 반환<br>
+    </p>
+    <button onclick="mapTest();">map 확인</button>
+
+    <br><br>
+    <h4>배열.filter(함수)</h4>
+    <p>
+        배열 내의 요소들을 주어진 함수에 의해 조건을 만족하는 항목만 모아 새로운 배열 반환
+    </p>
+    <button onclick="filterTest();">filter 확인</button>
+    <br><br>
+
+    <h4>배열.reduce(함수)</h4>
+    <p>
+        배열 내의 요소들을 주어진 함수를 실행하고 하나의 결과 값을 반환
+    </p>
+    <button onclick="reduceTest();">reduce 확인</button>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./res/js/11_js_feature.js"></script>
+</body>
+</html>
