@@ -80,3 +80,24 @@ const test1 = (target) => {
 
     return value;
 }
+
+const validate = () => {
+    const userId = document.querySelector("#userId").value;
+    const userPw = document.querySelector("#userPw").value;
+    const userPwChk = document.querySelector("#userPwChk").value;
+
+    if(userId.length < 5 || userId.length > 12) {
+        alert("아이디 값이 5~12 사이인 경우에만 회원가입이 가능합니다");
+        return false;
+    } else if(userPw !== userPwChk) {
+        alert("비밀번호가 다릅니다.");
+        return false;
+    }
+    
+    return true;
+
+    // return userPw === userPwChk;
+
+    // 생각을 하고 좀 더 효율적인 코드를 작성하자
+    // return userPw === userPwChk ? true : false; <- 이렇게 작성 No
+}
