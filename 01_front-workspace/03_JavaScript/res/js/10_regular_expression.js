@@ -77,72 +77,119 @@ const test2 = () => {
     // 1) ^ : 시작을 의미
     const regExp1 = /^j/; // j로 시작하는가?
     area2.innerHTML += `
-        /^j/ test() : ${regExp1.test(str)}<br>
-        /^j/ replace() : ${str.replace(regExp1, "k")}<br><br>
+        <b>/^j/ test()</b> : ${regExp1.test(str)}<br>
+        <b>/^j/ replace()</b> : ${str.replace(regExp1, "k")}<br><br>
     `;
 
     // 2) [] : [] 내에 여러 문자들을 목록처럼 나열 -> 해당 문자들이 있는지
     const regExp2 = /[abc]/;
     area2.innerHTML += `
-        /[abc]/ test : ${regExp2.test(str)}<br>
-        /[abc]/ replace : ${str.replace(regExp2, "***")}<br><br>
+        <b>/[abc]/ test</b> : ${regExp2.test(str)}<br>
+        <b>/[abc]/ replace</b> : ${str.replace(regExp2, "***")}<br><br>
     `;
 
     // 3) $ : 끝을 의미
     const regExp3 = /x$/;
     area2.innerHTML += `
-        /x$/ test : ${regExp3.test(str)}<br>
-        /x$/ replace : ${str.replace(regExp3, "@@")}<br><br>
+        <b>/x$/ test</b> : ${regExp3.test(str)}<br>
+        <b>/x$/ replace</b> : ${str.replace(regExp3, "@@")}<br><br>
     `;
 
     // j로 시작하고 x로 끝나는 패턴
     let regExp4 = /[^j-x$]/;
     area2.innerHTML += `
-        /[^j-x$]/ test : ${regExp4.test(str)}<br>
-        /[^j-x$]/ replace : ${str.replace(regExp4, "##")}<br><br>
+        <b>/[^j-x$]/ test</b> : ${regExp4.test(str)}<br>
+        <b>/[^j-x$]/ replace</b>: ${str.replace(regExp4, "##")}<br><br>
     `;
 
     // 4) . : 개행문자(\n)를 제외한 모든 문자 하나를 의미(영문, 한글, 숫자, 특수문자, 공백)
     regExp4 = /^j.x$/; // .위치에 문자 하나가 꼭 있어야 함
     area2.innerHTML += `
-        /^j.x$/ test : ${regExp4.test("jox")}<br>
-        /^j.x$/ test : ${regExp4.test("jx")}<br>
-        /^j.x$/ test : ${regExp4.test("j x")}<br>
-        /^j.x$/ test : ${regExp4.test("j\nx")}<br><br>
+        <b>/^j.x$/ test</b> : ${regExp4.test("jox")}<br>
+        <b>/^j.x$/ test</b> : ${regExp4.test("jx")}<br>
+        <b>/^j.x$/ test</b> : ${regExp4.test("j x")}<br>
+        <b>/^j.x$/ test</b> : ${regExp4.test("j\nx")}<br><br>
     `;
 
     // 5) + : 앞의 패턴이 한 번 이상 반복됨을 의미
     regExp4 = /^j.+x$/;
     area2.innerHTML += `
-        /^j.+x$/ test : ${regExp4.test("jox")}<br>
-        /^j.+x$/ test : ${regExp4.test("joox")}<br>
-        /^j.+x$/ test : ${regExp4.test("j x")}<br>
-        /^j.+x$/ test : ${regExp4.test("j\nx")}<br>
-        /^j.+x$/ test : ${regExp4.test(str)}<br><br>
+        <b>/^j.+x$/ test</b> : ${regExp4.test("jox")}<br>
+        <b>/^j.+x$/ test</b> : ${regExp4.test("joox")}<br>
+        <b>/^j.+x$/ test</b> : ${regExp4.test("j x")}<br>
+        <b>/^j.+x$/ test</b> : ${regExp4.test("j\nx")}<br>
+        <b>/^j.+x$/ test</b> : ${regExp4.test(str)}<br><br>
     `;
 
     // 6) 숫자로만 이루어진 문자열 검사
     const regExp5 = /^[0-9]+$/; // 개수 상관없이, 적어도 한 글자 이상인 숫자로만 이루어진 문자열 검사
     area2.innerHTML += `
-        /^[0-9]+$/ test : ${regExp5.test("12345")}<br><br>
+        /^[0-9]+$/ test</b> : ${regExp5.test("12345")}<br><br>
     `;
 
     // 7) 한글로만 이루어진 문자열 검사(자음, 모음, 결합)
     const regExp6 = /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/;
     area2.innerHTML += `
-        /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ test : ${regExp6.test("안녕하세요")}<br>
-        /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ test : ${regExp6.test("안녕하세요?")}<br>
+        <b>/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ test</b> : ${regExp6.test("안녕하세요")}<br>
+        <b>/^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/ test</b> : ${regExp6.test("안녕하세요?")}<br>
     `;
 
     // 8) 사용자에게 이름을 입력받아서 2글자 이상인 한글로만 이루어진 경우
     // "안녕하세요 반갑습니다!" 알림창 띄우기
     // 그렇지 않은 경우 "잘못 입력했습니다."
     const userName = prompt("이름을 입력해주세요");
-    const regExp7 = /^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,}$/;
+    const regExp7 = /^[가-힣]{2,}$/;
     
     if(regExp7.test(userName)) {
-        alert("안녕하세요 반갑습니다!");
+        alert(`안녕하세요 ${userName}님 반갑습니다!`);
     } else {
         alert("잘못 입력했습니다");
     }
+}
+
+const test3 = () => {
+    const area3 = document.querySelector("#area3");
+
+    // TODO 영문자(대, 소) 또는 숫자로만 입력.
+    // 단, 첫글자는 영문자로 시작
+    // const regExp = /^[a-zA-Z][a-zA-Z0-9]+/;
+    // const sample = prompt("아무거나 입력하세요");
+    // const regExp = /^[a-z][a-z0-9]+/i; // 플래그 문자 사용
+    
+    // if(regExp.test(sample)) {
+    //     alert("잘 입력했습니다.");
+    // } else {
+    //     alert("잘못 입력했습니다.");
+    // }
+
+    // g
+    const str = "JavaScript JQuery Ajax";
+    let regExp1 = /a/;
+
+    area3.innerHTML += `
+        <b>/a/</b> : ${str.replace(regExp1, "+")}<br><br>
+    `;
+
+    regExp1 = /a/g;
+    area3.innerHTML += `
+        <b>/a/g</b> : ${str.replace(regExp1, "+")}<br><br>
+    `;
+
+    regExp1 = /a/gi;
+    area3.innerHTML += `
+        <b>/a/gi</b> : ${str.replace(regExp1, "+")}<br><br>
+    `;
+
+    // m
+    const str3 = "JavaScript\nJQuery\nAjax";
+    console.log(str3);
+
+    let regExp2 = /^J/;
+    console.log(str3.replace(regExp2, "@"));
+
+    regExp2 = /^J/g;
+    console.log(str3.replace(regExp2, "@"));
+
+    regExp2 = /^J/gm; // 전역으로 여러 줄 검사
+    console.log(str3.replace(regExp2, "@"));
 }
