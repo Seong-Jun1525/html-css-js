@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 선택</title>
+
+    <style>
+        th, td {
+            padding: 0.5rem;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>요소 선택하기</h1>
+    <h3>기본 선택자</h3>
+    <h4>* 아이디 선택자</h4>
+    <p>
+        아이디값을 가진 특정 요소 <b>하나만</b> 선택
+    </p>
+
+    <h1 id="id1">테스트1</h1>
+    <h2 id="id2">테스트2</h2>
+
+    <hr>
+
+    <h4>* 태그 선택자</h4>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>JavaScript</p>
+
+    <h5>JAVA</h5>
+    <h5>ORACLE</h5>
+    <h5>JDBC</h5>
+
+    <hr>
+    <h4>* 클래스 선택자</h4>
+    <h1 class="cls">Class1</h1>
+    <h1 class="cls select">Class2</h1>
+    <h1 class="cls select">Class3</h1>
+
+    <hr>
+    <table border="1" style="text-align: center;">
+        <caption>* 요소 선택 방법 *</caption>
+        <tr>
+            <th>순수 JavaScript 방식</th>
+            <th>jQuery 방식</th>
+        </tr>
+        <tr>
+            <td>
+                document.getElementById("아이디값")<br>
+                document.querySelector("#아이디값")
+            </td>
+            <td>$("#아이디값")</td>
+        </tr>
+        <tr>
+            <td>
+                document.getElementsByClassName("클래스명")<br>
+                document.querySelectorAll(".클래스명")
+            </td>
+            <td>$(".클래스명")</td>
+        </tr>
+        <tr>
+            <td>
+                document.getElementsByTagName("태그명")<br>
+                document.querySelectorAll("태그명")
+            </td>
+            <td>$("태그명")</td>
+        </tr>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./res/js/02_select_element.js"></script>
+</body>
+</html>

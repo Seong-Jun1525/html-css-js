@@ -138,7 +138,7 @@ const test2 = () => {
     // "안녕하세요 반갑습니다!" 알림창 띄우기
     // 그렇지 않은 경우 "잘못 입력했습니다."
     const userName = prompt("이름을 입력해주세요");
-    const regExp7 = /^[가-힣]{2,}$/;
+    const regExp7 = /^[가-힣]{2,}$/; // <- ^ $ 메타문자 꼭 기억하기 ★★★
     
     if(regExp7.test(userName)) {
         alert(`안녕하세요 ${userName}님 반갑습니다!`);
