@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 생성 및 제거</title>
+
+    <style>
+        .addItem {
+            color: lightcoral;
+        }
+
+        .area {
+            width: 100px;
+            height: 100px;
+            background-color: lightskyblue;
+            color: darkblue;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .bgPink {
+            background-color: pink;
+        }
+    </style>
+
+    <script src="./res/jQuery/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>요소 생성 및 제거</h1>
+    <h3>* 삽입 관련 메서드</h3>
+    <p>
+        선택된 요소를 기준으로 새로운 요소를 추가하는 메서드
+    </p>
+    <pre>
+        $(A).append(B) : <b>A요소 내에 <span style="color: red">뒷 부분에</span> 추가</b> <u>(자손/하위)</u>
+            - 이미 요소가 있을 수 있음 그 뒤에 즉 마지막에 B요소를 추가
+        $(A).prepend(B) : <b>A요소 내에 <span style="color: red">앞 부분에</span> B요소를 추가</b> <u>(자손/하위)</u>
+            - 이미 요소가 있을 수 있음 그 앞에 즉 맨 처음에 B요소를 추가
+        $(A).after(B) : <b>A요소 <span style="color: red">다음에</span> B요소를 추가</b> <u>(동위)</u>
+        $(A).before(B) : <b>A요소 <span style="color: red">전에</span> B요소를 추가</b> <u>(동위)</u>
+    </pre>
+
+    <h1 id="test1"><span>A</span></h1>
+    <h1 id="test2"><span>A</span></h1>
+    <h1 id="test3"><span>A</span></h1>
+    <h1 id="test4"><span>A</span></h1>
+
+    <hr>
+    <h3>* 제거 관련 메서드</h3>
+    <ul>
+        <li>
+            <b>$("선택자").empty()</b> : 선택된 요소의 하위 요소를 제거해주는 메서드
+        </li>
+        <li>
+            <b>$("선택자").remove() | detach()</b> : 선택된 요소를 제거한 후 해당 요소를 반환해주는 메서드
+            <ul>
+                <li><b>.remove() : 제거된 요소의 이벤트를 가져오지 않음</b></li>
+                <li><b>.detach() : 제거된 요소의 이벤트까지 가져옴</b></li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1 class="area" id="item1">
+        <span>힘내</span>
+    </h1>
+
+    <button id="empty">제거1</button>
+    <button id="remove">제거2</button>
+    <button id="detach">제거3</button>
+
+    <div id="result"></div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="./res/js/03_create_and_remove_element.js"></script>
+</body>
+</html>
