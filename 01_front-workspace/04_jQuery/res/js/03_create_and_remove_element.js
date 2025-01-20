@@ -31,12 +31,12 @@ $(function() {
     });
 
     $("#remove").click(() => {
-        $("#item1").remove();
-        alert('안녕');
+        const item1 = $("#item1").remove(); // 이벤트는 따로 가져오지 않음
+        $("#result").append(item1);
     });
 
     $("#detach").click(() => {
-        $("#item1").detach();
-        alert('안녕');
-    })
+        const item1 = $("#item1").detach();
+        $("#result").append(item1); // 이벤트 요소도 가져옴
+    });
 });
